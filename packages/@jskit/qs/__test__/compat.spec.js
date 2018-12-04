@@ -5,8 +5,8 @@ let temp;
 const result1 = {
   from: 'singlemessage',
   isappinstalled: '0',
-  t3: null,
   t4: 0,
+  t5: false,
   id: '646156',
   platform: '5',
 };
@@ -17,6 +17,7 @@ const test1 = {
   t2: temp,
   t3: null,
   t4: 0,
+  t5: false,
   id: '646156',
   platform: '5',
 };

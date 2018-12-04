@@ -6,7 +6,11 @@
  */
 function compat(obj = {}) {
   for (const key in obj) {
-    if (typeof obj[key] === 'undefined' || obj[key] === '') {
+    if (
+      typeof obj[key] === 'undefined' ||
+      obj[key] === null ||
+      obj[key] === ''
+    ) {
       delete obj[key];
     }
   }
