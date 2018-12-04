@@ -23,8 +23,8 @@ function parse(url, key) {
   let value;
   let isArray;
 
-  // 处理没有 ? 的情况
-  url = url.indexOf('?') === -1 ? '?' + url : url;
+  // 处理不符合 search 参数格式的情况
+  url = url[0] !== '?' ? '?' + url : url;
   // 处理异常参数，如多个 ?
   url = url.replace(/\?/g, '&').replace('&', '?');
 

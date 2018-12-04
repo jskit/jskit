@@ -9,11 +9,17 @@ const result1 = {
   id: '646156',
   platform: '5',
 };
-const test2 = 'haoshiqi://com.doweidu/activityshare?activityId=1&xxx=23';
-const test3 = 'activityId=1&xxx=23';
+const test2 = 'haoshiqi://com.doweidu/detail?id=1&order_id=23';
+const test3 = 'id=1&order_id=23';
+const test4 = 'id=1?order_id=23';
+const test5 = 'id=1&order-id=23';
 const result2 = {
-  activityId: '1',
-  xxx: '23',
+  id: '1',
+  order_id: '23',
+};
+const result5 = {
+  id: '1',
+  'order-id': '23',
 };
 
 describe('parse', () => {
@@ -23,6 +29,7 @@ describe('parse', () => {
   });
 
   const r2 = JSON.stringify(result2);
+  const r5 = JSON.stringify(result5);
   test('test2', () => {
     const result = parse(test2);
     expect(JSON.stringify(result)).toBe(r2);
@@ -30,5 +37,13 @@ describe('parse', () => {
   test('test3', () => {
     const result = parse(test3);
     expect(JSON.stringify(result)).toBe(r2);
+  });
+  test('test4', () => {
+    const result = parse(test4);
+    expect(JSON.stringify(result)).toBe(r2);
+  });
+  test('test5', () => {
+    const result = parse(test5);
+    expect(JSON.stringify(result)).toBe(r5);
   });
 });

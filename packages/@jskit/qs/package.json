@@ -8,7 +8,7 @@
     "prebuild": "rm -rf lib",
     "build": "./node_modules/.bin/babel src -d lib --ignore __test__",
     "prepublish": "npm run build",
-    "test": "jest --notify"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
