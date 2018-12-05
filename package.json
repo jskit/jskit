@@ -7,6 +7,7 @@
   "scripts": {
     "test": "node scripts/test.js",
     "pretest": "yarn clean",
+    "commit": "npx git-cz",
     "lint": "eslint --fix packages/**/*.js packages/**/bin/*",
     "check-links": "node scripts/checkLinks.js",
     "clean": "rimraf packages/test/*",
@@ -15,8 +16,7 @@
     "release": "yarn --pure-lockfile && yarn clean && node scripts/release.js",
     "changelog": "node scripts/genChangelog.js run",
     "docs": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "patch-chromedriver": "node scripts/patchChromedriver.js"
+    "docs:build": "vuepress build docs"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
