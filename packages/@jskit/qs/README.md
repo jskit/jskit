@@ -27,6 +27,7 @@ import {
   stringify,
 } from '@jskit/qs';
 
+// 非规范链接
 const url = 'https://m.iqianggou.com/?from=singlemessage&isappinstalled=0#bargain?id=646156&platform=5'
 
 const query = parse(url);

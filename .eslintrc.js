@@ -78,13 +78,14 @@ module.exports = {
     ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-magic-numbers': [
-      'error',
-      {
-        ignore: [-1, 0, 1],
-        ignoreArrayIndexes: true,
-      },
-    ],
+    'no-magic-numbers': 'off',
+    // 'no-magic-numbers': [
+    //   'error',
+    //   {
+    //     ignore: [-1, 0, 1],
+    //     ignoreArrayIndexes: true,
+    //   },
+    // ],
     'no-else-return': 'off',
     'no-mixed-operators': 'off',
     // 'no-multi-spaces': [
