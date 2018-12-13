@@ -1,7 +1,7 @@
 const fastfib = require('../lib/index');
 
 describe('compat', () => {
-  test('test1', () => {
+  test('test1 1~12', () => {
     expect(fastfib(0)).toBe(0);
     expect(fastfib(1)).toBe(1);
     expect(fastfib(2)).toBe(1);
