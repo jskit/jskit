@@ -18,6 +18,7 @@
     "changelog": "node scripts/genChangelog.js run",
     "docs": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "patch-chromedriver": "node scripts/patchChromedriver.js",
     "tsc": "lerna run tsc"
   },
   "gitHooks": {
