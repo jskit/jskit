@@ -1,11 +1,8 @@
 {
   "name": "jskit-version-marker",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "version marker for @jskit/shared",
   "author": "Evan You",
   "license": "MIT",
-  "main": "package.json",
-  "devDependencies": {
-
-  }
+  "main": "package.json"
 }
