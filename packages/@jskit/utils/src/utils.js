@@ -30,6 +30,10 @@ export function uuid(size = 21) {
 
 /**
  * Create a cached version of a pure function.
+ *
+ * @export
+ * @param {*} fn 传入函数
+ * @returns { function } 返回函数
  */
 export function cached(fn) {
   const cache = Object.create(null);

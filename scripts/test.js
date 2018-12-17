@@ -7,7 +7,7 @@ const args = minimist(rawArgs)
 let regex
 if (args.p) {
   const packages = (args.p || args.package).split(',').join('|')
-  regex = `.*@jskit/*/.*\\.spec\\.js$`
+  regex = `.*@jskit/*/.*\\.test\\.js$`
   const i = rawArgs.indexOf('-p')
   rawArgs.splice(i, 2)
 }
@@ -16,6 +16,7 @@ if (args.p) {
   const jestArgs = [
     '--env', 'node',
     '--runInBand',
+    '--no-cache',
     ...rawArgs,
     ...(regex ? [regex] : [])
   ]
