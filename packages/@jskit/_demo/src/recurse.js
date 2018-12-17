@@ -1,8 +1,8 @@
 /**
  * 递归方法实现斐波那契数列
  *
- * @param {number} n
- * @returns
+ * @param {number} n 传入位数
+ * @returns {number} 返回数字
  */
 function recurse(n) {
   if (n === 0) return 0;

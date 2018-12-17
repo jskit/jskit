@@ -8,7 +8,7 @@
     "test": "node scripts/test.js",
     "pretest": "yarn clean",
     "commit": "npx git-cz",
-    "lint": "eslint --fix packages/**/*.js packages/**/bin/*",
+    "lint": "eslint --fix packages/**/*.js",
     "check-links": "node scripts/checkLinks.js",
     "clean": "rimraf packages/test/*",
     "sync": "node scripts/syncDeps.js",

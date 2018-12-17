@@ -1,8 +1,8 @@
 /**
  * 迭代方式来实现斐波那契数列
  *
- * @param {number} n
- * @returns
+ * @param {number} n 传入位数
+ * @returns {number} 返回数字
  */
 function iter(n) {
   let current = 0;

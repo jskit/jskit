@@ -1,6 +1,6 @@
 {
   "name": "@jskit/_demo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "@jskit/demo",
   "main": "lib/index.js",
   "scripts": {
