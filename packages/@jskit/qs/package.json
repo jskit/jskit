@@ -1,6 +1,6 @@
 {
   "name": "@jskit/qs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "query-string",
   "main": "lib/index.js",
   "scripts": {
