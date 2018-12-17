@@ -1,5 +1,5 @@
-const stringify = require('../lib/stringify');
-// import stringify from '../src/stringify'
+// const stringify = require('../lib/stringify');
+import stringify from '../lib/stringify';
 
 const result1 = 'from=singlemessage&isappinstalled=0&id=646156&platform=5';
 const test1 = {

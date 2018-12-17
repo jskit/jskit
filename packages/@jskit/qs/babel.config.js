@@ -3,13 +3,12 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        loose: true,
-        modules: 'cjs', // false
+        modules: false,
       },
     ],
     // 'es2015',
     // '@babel/preset-stage-2',
-    '@babel/preset-typescript',
+    // '@babel/preset-typescript',
   ],
   plugins: [
     '@babel/plugin-syntax-dynamic-import',

@@ -1,6 +1,8 @@
-const fastfib = require('../lib/index');
+import fastfib from '../lib/iter';
 
-describe('compat', () => {
+console.log(fastfib);
+
+describe('fastfib', () => {
   test('test1 1~12', () => {
     expect(fastfib(0)).toBe(0);
     expect(fastfib(1)).toBe(1);
@@ -17,3 +19,21 @@ describe('compat', () => {
     expect(fastfib(12)).toBe(144);
   });
 });
+
+// import React from 'react';
+// import Link from '../src/mycomp/Link';
+// import renderer from 'react-test-renderer';
+
+// describe('Shallow Rendering', function () {
+//     it('App\'s title should be Todos', function () {
+//     const component = renderer.create(
+//         <Link page="http://www.facebook.com">Facebook</Link>
+//     );
+//     let tree = component.toJSON();
+
+//     expect(tree.type).not.toBe("b");
+
+//     expect(tree).toMatchSnapshot();
+
+//     });
+// });

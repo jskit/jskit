@@ -1,5 +1,5 @@
-const compat = require('../lib/compat');
-// import compat from '../lib/compat'
+// const compat = require('../lib/compat');
+import compat from '../lib/compat';
 
 let temp;
 const result1 = {

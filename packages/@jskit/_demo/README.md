@@ -8,3 +8,9 @@
 </p>
 
 使用 JavaScript 尽可能快地来计算斐波那契数列。
+
+```js
+import fib from '@jskit/_demo';
+
+fib(12); // 144
+```

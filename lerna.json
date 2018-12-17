@@ -1,9 +1,6 @@
 {
+  "lerna": "3.4.0",
+  "version": "23.6.0",
   "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "0.0.1",
-  "packages": [
-    "packages/@jskit/*",
-    "packages/test/*"
-  ]
+  "useWorkspaces": true
 }
