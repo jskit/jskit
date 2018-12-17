@@ -69,3 +69,4 @@ packages/test
 dist
 temp
 .circleci
+scripts/release.sh
