@@ -28,6 +28,7 @@
     "verbose": true,
     "notify": true,
     "testEnvironment": "node",
+    "collectCoverage": true,
     "setupFiles": [
       "<rootDir>/scripts/testSetup.js"
     ],

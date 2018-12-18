@@ -1,4 +1,19 @@
-import { looseEqual, upperFirst, kebabCase, camelCase } from '../lib';
+import {
+  randomRange,
+  looseEqual,
+  upperFirst,
+  kebabCase,
+  camelCase,
+  sleep,
+} from '../lib';
+
+// const testStr =
+// '_~0123456789' + 'abcdefghijklmnopqrstuvwxyz' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+test('randomRange', () => {
+  expect(randomRange(1)).toBe(1);
+  // expect(randomRange(1, 2)).toBe(1);
+});
 
 test('looseEqual', () => {
   let temp;
@@ -16,6 +31,8 @@ test('looseEqual', () => {
   expect(looseEqual({}, '')).toBe(false);
   expect(looseEqual(temp, undefined)).toBe(true);
   expect(looseEqual(temp, null)).toBe(false);
+  const date = new Date('2018-12-18 12:42:30');
+  expect(looseEqual(date, new Date('2018-12-18 12:42:30'))).toBe(true);
 });
 
 // 首字母大写
@@ -34,4 +51,9 @@ test('kebabCase', () => {
 test('camelCase', () => {
   expect(camelCase('abc')).toBe('abc');
   expect(camelCase('order-detail')).toBe('orderDetail');
+});
+
+it('sleep', async () => {
+  const sleepTimes = await sleep(1000);
+  expect(sleepTimes).toBe(1000);
 });

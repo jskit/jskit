@@ -8,6 +8,27 @@ import { isObject, isArray } from './is';
 export const randomString =
   '_~getRandomVcryp0123456789bfhijklqsuvwxzABCDEFGHIJKLMNOPQSTUWXYZ';
 
+// https://github.com/ai/nanoid/blob/master/non-secure.js
+// 指定范围，生成随机数
+export function random(size) {
+  const result = [];
+  while (0 < size--) {
+    result.push(Math.floor(Math.random() * 256));
+  }
+  return result;
+}
+
+export function randomRange(under, over) {
+  switch (arguments.length) {
+    case 1:
+      return parseInt(Math.random() * under + 1);
+    case 2:
+      return parseInt(Math.random() * (over - under + 1) + under);
+    default:
+      return 0;
+  }
+}
+
 export function uuid(size = 21) {
   const url = randomString;
   let id = '';
@@ -19,9 +40,6 @@ export function uuid(size = 21) {
     bytes = random(size);
     // console.warn(':::uuid random:', bytes.join(','));
   }
-  // const bytes = typeof crypto !== 'undefined' && crypto.getRandomValues ?
-  //   crypto.getRandomValues(new Uint8Array(size)) :
-  //   random(size);
   while (0 < size--) {
     id += url[bytes[size] & 63];
   }
@@ -98,7 +116,7 @@ export function looseEqual(a, b) {
 export function sleep(timeout) {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve();
+      resolve(timeout);
     }, timeout);
   });
 }

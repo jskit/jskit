@@ -11,8 +11,14 @@ module.exports = {
     // '@babel/preset-typescript',
   ],
   plugins: [
+    // '@babel/runtime',
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-transform-runtime',
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        corejs: 2,
+      },
+    ],
     // https://babeljs.io/docs/en/babel-plugin-proposal-export-default-from
     '@babel/plugin-proposal-export-default-from',
     // https://babeljs.io/docs/en/babel-helper-module-imports

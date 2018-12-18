@@ -165,6 +165,7 @@ module.exports = {
       2,
       {
         MemberExpression: 'off',
+        SwitchCase: 1,
       },
     ],
   },
