@@ -1,4 +1,4 @@
-import fastfib from '../src/iter';
+import fastfib from '../lib/iter';
 
 console.log(fastfib);
 

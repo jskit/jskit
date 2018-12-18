@@ -1,6 +1,6 @@
 const execa = require('execa')
 const cc = require('conventional-changelog')
-const config = require('@jskit/conventional-changelog')
+const config = require('@vue/conventional-changelog')
 
 const gen = module.exports = version => {
   const fileStream = require('fs').createWriteStream(`CHANGELOG.md`)

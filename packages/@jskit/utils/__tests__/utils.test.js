@@ -1,4 +1,4 @@
-import { looseEqual, upperFirst, kebabCase, camelCase } from '../src';
+import { looseEqual, upperFirst, kebabCase, camelCase } from '../lib';
 
 test('looseEqual', () => {
   let temp;
