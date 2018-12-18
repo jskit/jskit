@@ -1,4 +1,4 @@
-import { isUnDef, isDef, isArray, isObject, isEmptyObject } from '../lib';
+import { isUnDef, isDef, isArray, isObject, isEmptyObject } from '../src';
 
 test('isUnDef', () => {
   let temp;
