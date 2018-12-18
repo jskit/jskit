@@ -1,3 +1,4 @@
+/* eslint-disable */
 // make sure generators are using the latest version of plugins,
 // and plugins are using the latest version of deps
 
@@ -107,7 +108,7 @@ async function syncDeps ({ local, version, skipPrompt }) {
       const deps = pkg.dependencies
       const resolvedDeps = []
       for (const dep in deps) {
-        if (dep.match(/^@jskit/) && !externalScopedPackages[dep]) {
+        if (dep.match(/^@jskit/) && !externalVueScopedPackages[dep]) {
           continue
         }
         let local = deps[dep]
@@ -166,7 +167,13 @@ async function syncDeps ({ local, version, skipPrompt }) {
       const localReplacer = makeReplacer(
         pkg => {
           try {
-            // inline version takes priority
+            // for eslint-config-* packages, only use version field from package.json
+            // as they're published separately
+            if (pkg.includes('eslint-config')) {
+              return require(`../packages/${pkg}/package.json`).version
+            }
+
+            // otherwise, inline version takes priority
             return version || require(`../packages/${pkg}/package.json`).version
           } catch (e) {}
         }
