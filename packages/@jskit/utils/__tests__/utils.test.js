@@ -1,10 +1,10 @@
 import {
   randomRange,
-  looseEqual,
   upperFirst,
   kebabCase,
   camelCase,
   sleep,
+  merge,
 } from '../lib';
 
 // const testStr =
@@ -13,26 +13,6 @@ import {
 test('randomRange', () => {
   expect(randomRange(1)).toBe(1);
   // expect(randomRange(1, 2)).toBe(1);
-});
-
-test('looseEqual', () => {
-  let temp;
-  expect(looseEqual(undefined, null)).toBe(false);
-  expect(looseEqual(undefined, '')).toBe(false);
-  expect(looseEqual(undefined, false)).toBe(false);
-  expect(looseEqual('', false)).toBe(false);
-  expect(looseEqual('', 0)).toBe(false);
-  expect(looseEqual(false, '')).toBe(false);
-  expect(looseEqual(false, 0)).toBe(false);
-  expect(looseEqual(true, 1)).toBe(false);
-  expect(looseEqual(null, '')).toBe(false);
-  expect(looseEqual(null, 0)).toBe(false);
-  expect(looseEqual({}, [])).toBe(false);
-  expect(looseEqual({}, '')).toBe(false);
-  expect(looseEqual(temp, undefined)).toBe(true);
-  expect(looseEqual(temp, null)).toBe(false);
-  const date = new Date('2018-12-18 12:42:30');
-  expect(looseEqual(date, new Date('2018-12-18 12:42:30'))).toBe(true);
 });
 
 // 首字母大写
@@ -54,6 +34,11 @@ test('camelCase', () => {
 });
 
 it('sleep', async () => {
-  const sleepTimes = await sleep(1000);
-  expect(sleepTimes).toBe(1000);
+  const sleepTimes = await sleep(100);
+  expect(sleepTimes).toBe(100);
+});
+
+it('merge', async () => {
+  const result = JSON.stringify(merge({ a: 1, b: 2 }, { a: 3, c: 4 }));
+  expect(result).toBe(`{\"a\":3,\"b\":2,\"c\":4}`);
 });

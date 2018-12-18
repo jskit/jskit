@@ -7,6 +7,7 @@ import {
   isObject,
   isEmptyObject,
   isFunction,
+  looseEqual,
 } from '../lib';
 
 test('isUnDef', () => {
@@ -87,4 +88,24 @@ test('isFunction', () => {
   expect(isFunction({})).toBe(false);
   expect(isFunction(null)).toBe(false);
   expect(isFunction()).toBe(false);
+});
+
+test('looseEqual', () => {
+  let temp;
+  expect(looseEqual(undefined, null)).toBe(false);
+  expect(looseEqual(undefined, '')).toBe(false);
+  expect(looseEqual(undefined, false)).toBe(false);
+  expect(looseEqual('', false)).toBe(false);
+  expect(looseEqual('', 0)).toBe(false);
+  expect(looseEqual(false, '')).toBe(false);
+  expect(looseEqual(false, 0)).toBe(false);
+  expect(looseEqual(true, 1)).toBe(false);
+  expect(looseEqual(null, '')).toBe(false);
+  expect(looseEqual(null, 0)).toBe(false);
+  expect(looseEqual({}, [])).toBe(false);
+  expect(looseEqual({}, '')).toBe(false);
+  expect(looseEqual(temp, undefined)).toBe(true);
+  expect(looseEqual(temp, null)).toBe(false);
+  const date = new Date('2018-12-18 12:42:30');
+  expect(looseEqual(date, new Date('2018-12-18 12:42:30'))).toBe(true);
 });

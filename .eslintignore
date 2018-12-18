@@ -6,4 +6,5 @@ entry-wc.js
 dist
 scripts
 lib
+coverage
 .eslintrc.js

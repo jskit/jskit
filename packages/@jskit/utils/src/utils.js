@@ -1,6 +1,6 @@
 // utils
 
-import { isObject, isArray } from './is';
+// import { isObject, isArray } from './is';
 
 // '_~0123456789' +
 // 'abcdefghijklmnopqrstuvwxyz' +
@@ -60,57 +60,6 @@ export function cached(fn) {
     /* eslint no-return-assign: 0 */
     return hit || (cache[str] = fn(str));
   };
-}
-
-/**
- * looseEqual
- * Check if two values are loosely equal - that is,
- * if they are plain objects, do they have the same shape?
- *
- * @export
- * @param {*} a 比较值1
- * @param {*} b 比较值2
- * @returns {boolean} 布尔值
- */
-export function looseEqual(a, b) {
-  if (a === b) return true;
-  const isObjectA = isObject(a);
-  const isObjectB = isObject(b);
-  if (isObjectA && isObjectB) {
-    try {
-      const isArrayA = isArray(a);
-      const isArrayB = isArray(b);
-      if (isArrayA && isArrayB) {
-        return (
-          a.length === b.length &&
-          a.every((e, i) => {
-            return looseEqual(e, b[i]);
-          })
-        );
-      } else if (a instanceof Date && b instanceof Date) {
-        return a.getTime() === b.getTime();
-      } else if (!isArrayA && !isArrayB) {
-        const keysA = Object.keys(a);
-        const keysB = Object.keys(b);
-        return (
-          keysA.length === keysB.length &&
-          keysA.every(key => {
-            return looseEqual(a[key], b[key]);
-          })
-        );
-      } else {
-        /* istanbul ignore next */
-        return false;
-      }
-    } catch (e) {
-      /* istanbul ignore next */
-      return false;
-    }
-  } else if (!isObjectA && !isObjectB) {
-    return String(a) === String(b);
-  } else {
-    return false;
-  }
 }
 
 export function sleep(timeout) {
