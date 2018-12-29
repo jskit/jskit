@@ -28,7 +28,8 @@ https://m.iqianggou.com/?from=singlemessage&isappinstalled=0#bargain?id=646156&p
 ```js
 import {
   copy,
-  compat,
+  compact,
+  compactObject,
   parse,
   stringify,
 } from '@jskit/qs';
