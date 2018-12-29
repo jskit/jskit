@@ -20,7 +20,8 @@ https://m.iqianggou.com/?from=singlemessage&isappinstalled=0#bargain?id=646156&p
 ## Usage
 
 - `copy`      简单拷贝 `JSON.parse(JSON.stringify(data))`;
-- `compat`    清除对象的无效数据，如 `null`, `undefined`, `''`
+- `compact`   清除数组中的空数据，如 `''`, `0`, `undefined`, `false`, `NaN`
+- `compactObject` 清除对象的无效数据，如 `''`, `undefined`, `null`
 - `parse`     解析 url 的 query 参数，输出为对象
 - `stringify` 对象转化为查询字符串
 
