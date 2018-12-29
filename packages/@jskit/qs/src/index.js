@@ -8,12 +8,13 @@ export parse from './parse';
 export copy from './copy';
 export format from './format';
 export stringify from './stringify';
-export compat from './compat';
+export compact from './compact';
+export compactObject from './compactObject';
 
 // export default {
 //   copy,
 //   parse,
 //   format,
 //   stringify,
-//   compat,
+//   compact,
 // }

@@ -6,11 +6,12 @@
  * @returns  { string }
  */
 
-import compat from './compat';
+import compactObject from './compactObject';
 // const toISO = Date.prototype.toISOString;
 
 const defaults = {
   delimiter: '&',
+  invalid: ['', undefined, null],
   // encode: true,
   // encoder: utils.encode,
   // encodeValuesOnly: false,
@@ -22,19 +23,15 @@ const defaults = {
 };
 
 export default function stringify(params, options = {}) {
-  params = compat(Object.assign({}, params));
-  const opts = Object.assign({}, defaults, options);
-  const { delimiter = defaults.delimiter } = opts;
+  const opts = { ...defaults, ...options };
+  const { delimiter = defaults.delimiter, invalid = defaults.invalid } = opts;
 
-  const arr = [];
+  const result = [];
+  params = compactObject(params, invalid);
   for (const key in params) {
-    // if (typeof params[key] === 'undefined' || params[key] === '') {
-    //   delete params[key]
-    // } else {
-    // }
     if ({}.hasOwnProperty.call(params, key)) {
-      arr.push(`${key}=${encodeURIComponent(params[key])}`);
+      result.push(`${key}=${encodeURIComponent(params[key])}`);
     }
   }
-  return arr.join(delimiter);
+  return result.join(delimiter);
 }

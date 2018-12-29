@@ -13,6 +13,8 @@ export function formatNum(n) {
   // return n > 10 ? n : ('0' + n)
 }
 
+console.log(formatNum(1));
+
 /**
  * formatCountDown(times, 'D天H:F:S')
  *
