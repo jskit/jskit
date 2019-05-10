@@ -29,7 +29,7 @@ function compact(array, invalid = ['', 0, undefined, false, NaN]) {
   return result;
 }
 
-const test1 = [1, 'test', '', 0, undefined, false, null, NaN];
-console.log(compact(test1, [0, undefined, false]));
+// const test1 = [1, 'test', '', 0, undefined, false, null, NaN];
+// console.log(compact(test1, [0, undefined, false]));
 
 export default compact;
