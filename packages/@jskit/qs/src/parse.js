@@ -18,7 +18,7 @@ function decode(input) {
   return decodeURIComponent(input.replace(/\+/g, ' '));
 }
 
-function parse(url = '', key) {
+export function parse(url = '', key) {
   if (!url) return;
 
   const params = {};
@@ -36,7 +36,6 @@ function parse(url = '', key) {
   while ((match = searchReg.exec(url))) {
     name = decode(match[1]);
     value = decode(match[2]);
-    console.log(value);
     isArray = name.match(arrayReg);
     // 处理参数为url这种情况
     if (urlReg.test(value)) {
@@ -57,5 +56,3 @@ function parse(url = '', key) {
 }
 
 // console.log(parse('id=xx&c=xx&q=5%E6%9C%88'));
-
-export default parse;

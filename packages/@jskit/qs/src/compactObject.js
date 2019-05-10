@@ -6,7 +6,7 @@
  * @returns { Object } Returns the new object of filtered values.
  */
 // invalid = ['', undefined, null，0, false, NaN]
-function compactObject(object = {}, invalid = ['', undefined, null]) {
+export function compactObject(object = {}, invalid = ['', undefined, null]) {
   const result = {};
   for (const key in object) {
     if (!invalid.includes(object[key])) {
@@ -15,5 +15,3 @@ function compactObject(object = {}, invalid = ['', undefined, null]) {
   }
   return result;
 }
-
-export default compactObject;

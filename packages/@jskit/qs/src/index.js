@@ -4,12 +4,12 @@
 // https://github.com/leebyron/ecmascript-more-export-from
 // https://github.com/tc39/proposal-export-default-from
 
-export parse from './parse';
-export copy from './copy';
-export format from './format';
-export stringify from './stringify';
-export compact from './compact';
-export compactObject from './compactObject';
+export * from './parse';
+export * from './copy';
+export * from './format';
+export * from './stringify';
+export * from './compact';
+export * from './compactObject';
 
 // export default {
 //   copy,

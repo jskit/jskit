@@ -1,5 +1,5 @@
 // const compactObject = require('../lib/compactObject');
-import compactObject from '../lib/compactObject';
+import { compactObject } from '../lib';
 
 const test1 = {
   from: 'singlemessage',

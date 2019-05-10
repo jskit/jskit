@@ -6,7 +6,7 @@
  * @returns  { string }
  */
 
-import compactObject from './compactObject';
+import { compactObject } from './compactObject';
 // const toISO = Date.prototype.toISOString;
 
 const defaults = {
@@ -22,7 +22,7 @@ const defaults = {
   // strictNullHandling: false,
 };
 
-export default function stringify(params, options = {}) {
+export function stringify(params, options = {}) {
   const opts = { ...defaults, ...options };
   const { delimiter = defaults.delimiter, invalid = defaults.invalid } = opts;
 

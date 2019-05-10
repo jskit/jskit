@@ -1,5 +1,5 @@
 // const compact = require('../lib/compact');
-import compact from '../lib/compact';
+import { compact } from '../lib';
 
 // 默认
 // filter1 =  ['', 0, undefined, false, NaN]

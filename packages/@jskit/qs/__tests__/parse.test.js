@@ -1,5 +1,5 @@
 // const parse = require('../lib/parse');
-import parse from '../lib/parse';
+import { parse } from '../lib';
 
 const test1 =
   'https://m.iqianggou.com/?from=singlemessage&isappinstalled=0#bargain?id=646156&platform=5';

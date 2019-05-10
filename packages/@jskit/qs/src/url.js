@@ -23,6 +23,6 @@
 
  */
 
-const { URL } = require('url');
+const url = require('url');
 
-module.exports = URL;
+export const URL = url.URL;

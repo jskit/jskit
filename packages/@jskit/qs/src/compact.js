@@ -12,7 +12,7 @@
  * compact([0, 1, false, 2, '', 3])
  * // => [1, 2, 3]
  */
-function compact(array, invalid = ['', 0, undefined, false, NaN]) {
+export function compact(array, invalid = ['', 0, undefined, false, NaN]) {
   let resIndex = 0;
   const result = [];
 
@@ -31,5 +31,3 @@ function compact(array, invalid = ['', 0, undefined, false, NaN]) {
 
 // const test1 = [1, 'test', '', 0, undefined, false, null, NaN];
 // console.log(compact(test1, [0, undefined, false]));
-
-export default compact;

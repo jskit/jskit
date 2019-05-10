@@ -1,3 +1,1 @@
-function merge() {}
-
-export default merge;
+export function merge() {}

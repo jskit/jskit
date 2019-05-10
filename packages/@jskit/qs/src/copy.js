@@ -4,8 +4,6 @@
  * @param {any} [data=''] 传入非 undefined
  * @returns { Object } 新对象
  */
-function copy(data = null) {
+export function copy(data = null) {
   return JSON.parse(JSON.stringify(data));
 }
-
-export default copy;
