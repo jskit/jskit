@@ -1,4 +1,4 @@
-import copy from './copy';
+// import copy from './copy';
 
 /**
  * parse 解析url
@@ -14,7 +14,11 @@ const searchReg = /([^&=?#]+)=([^&#]+)/g;
 const urlReg = /\/+.*\?/;
 const arrayReg = /(.+)\[\]$/;
 
-function parse(url, key) {
+function decode(input) {
+  return decodeURIComponent(input.replace(/\+/g, ' '));
+}
+
+function parse(url = '', key) {
   if (!url) return;
 
   const params = {};
@@ -30,8 +34,9 @@ function parse(url, key) {
 
   /* eslint prefer-destructuring: 0 */
   while ((match = searchReg.exec(url))) {
-    name = match[1];
-    value = match[2];
+    name = decode(match[1]);
+    value = decode(match[2]);
+    console.log(value);
     isArray = name.match(arrayReg);
     // 处理参数为url这种情况
     if (urlReg.test(value)) {
@@ -47,9 +52,10 @@ function parse(url, key) {
     }
   }
 
-  return key ? copy(params[key]) : copy(params);
+  const result = key ? params[key] : params;
+  return result;
 }
 
-// console.log(parse('id=xx&c=xx'))
+// console.log(parse('id=xx&c=xx&q=5%E6%9C%88'));
 
 export default parse;

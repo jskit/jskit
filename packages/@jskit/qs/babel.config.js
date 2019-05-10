@@ -7,7 +7,6 @@ module.exports = {
       },
     ],
     // 'es2015',
-    // '@babel/preset-stage-2',
     // '@babel/preset-typescript',
   ],
   plugins: [
