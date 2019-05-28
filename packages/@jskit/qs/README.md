@@ -1,5 +1,7 @@
 # @jskit/qs
 
+已废弃，请使用 `@dwdjs/utils/qs`
+
 [![Circle CI](https://circleci.com/gh/jskit/shared/tree/master.svg?style=svg)](https://circleci.com/gh/jskit/shared/tree/master)
 
 目标

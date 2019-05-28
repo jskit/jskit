@@ -4,6 +4,8 @@
 // https://github.com/leebyron/ecmascript-more-export-from
 // https://github.com/tc39/proposal-export-default-from
 
+console.error('已废弃，请使用 @dwdjs/utils/qs');
+
 export * from './parse';
 export * from './copy';
 export * from './format';
